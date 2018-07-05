@@ -1,0 +1,158 @@
+fileTypes: [
+  "ulss"
+]
+name: "Ulysses Style Sheet"
+patterns: [
+  {
+    include: "#comment"
+  }
+  {
+    include: "#selector"
+  }
+  {
+    include: "#style-settings"
+  }
+  {
+    include: "#variable-definition"
+  }
+]
+repository:
+  comment:
+    name: "meta.comment.ulss"
+    patterns: [
+      {
+        begin: "//"
+        end: "$"
+        name: "comment.line.double-slash.ulss"
+      }
+      {
+        begin: "/\\*"
+        comment: "Currently not supported"
+        end: "\\*/"
+        name: "invalid.comment.block.ulss"
+      }
+    ]
+  "numeric-values":
+    patterns: [
+      {
+        match: "(#)[0-9a-fA-F]{6}\\b"
+        name: "constant.other.color.rgb-value.ulss"
+      }
+      {
+        match: "[\\[,]?(?x)(?:-|\\+)?(?:(?:[0-9]+(?:\\.[0-9]+)?)|(?:\\.[0-9]+))((?:pt|mm|in|ex|en|em|cm)\\b|%)?[\\],]?"
+        name: "constant.numeric.ulss"
+      }
+    ]
+  selector:
+    begin: "\\s*(?=[@*:a-zA-Z])"
+    end: "(?=(\\s|[/{]))"
+    name: "meta.selector.ulss"
+    patterns: [
+      {
+        match: "\\b(ulysses-whitespace|ulysses-tag|ulysses-escape-character|ulysses-escape|paragraph-filename|paragraph-figure|paragraph-divider|paragraph|media-image|list-unordered|list-ordered|list-all|inline-strong|inline-raw|inline-mark|inline-link|inline-footnote|inline-emphasis|inline-delete|inline-comment|inline-code|inline-citation|inline-annotation|heading-all|heading-[1-6]|document-settings|defaults|block-raw|block-quote|block-comment|block-code|block-all|area-header|area-footnotes|area-footer)\\b"
+        name: "entity.name.tag.ulss"
+      }
+      {
+        match: "\\*"
+        name: "entity.name.tag.wildcard.ulss"
+      }
+      {
+        match: "\\@[-a-zA-Z0-9]*"
+        name: "entity.name.other.ulss"
+      }
+      {
+        match: "\\:(right-page|left-page|last|first-page|first|enumerator|anchor)"
+        name: "entity.other.inherited-class.ulss"
+      }
+    ]
+  string:
+    begin: "\""
+    end: "\""
+    name: "string.quoted.double.ulss"
+    patterns: [
+      {
+        match: "\\."
+        name: "constant.character.escape.ulss"
+      }
+    ]
+  "style-settings":
+    begin: "\\{"
+    beginCaptures:
+      "0":
+        name: "punctuation.section.property-group.begin.ulss"
+    end: "\\}"
+    endCaptures:
+      "0":
+        name: "punctuation.section.property-group.end.ulss"
+    name: "meta.property-group.ulss"
+    patterns: [
+      {
+        include: "#comment"
+      }
+      {
+        begin: "(?<![-a-z])(?=[-a-z])"
+        end: "(?![-a-z])"
+        name: "meta.property-name.ulss"
+        patterns: [
+          {
+            match: "\\b(visibility|underline-color|underline|two-sided|top-spacing|text-inset|text-alignment|tab-positions|tab-alignments|style-title|strikethrough-color|strikethrough|section-break|paragraph-divider|page-width|page-orientation|page-number-style|page-number-reset|page-number-format|page-inset-top|page-inset-outer|page-inset-inner|page-inset-bottom|page-height|page-break|page-binding|orphans-and-widows|margin-top|margin-right|margin-left|margin-bottom|locale|line-spacing|line-height|keep-with-following|itemization|item-spacing|hyphenation|footnote-visibility|footnote-style|footnote-placement|footnote-enumeration|font-weight|font-style|font-slant|font-size|font-family|font-color|first-line-indent|enumeration-style|enumeration-format|divider-width|divider-spacing|divider-position|divider-length|default-tab-interval|content|column-spacing-width|column-count|character-spacing|bottom-spacing|baseline-shift|background-color|anchor-inset|anchor-alignment)\\b"
+            name: "support.type.property-name.ulss"
+          }
+        ]
+      }
+      {
+        include: "#style-values"
+      }
+    ]
+  "style-values":
+    begin: ":\\s*"
+    end: "\\s*(\\n|\\;|\\})"
+    name: "meta.constant.property-value.ulss"
+    patterns: [
+      {
+        include: "#comment"
+      }
+      {
+        include: "#string"
+      }
+      {
+        match: "[\\[,]?\\b(yes|visible|uppercase-roman|uppercase-alpha|true|superscript|subscript|single|right|portrait|prevented|per-section|per-page|paragraph-divider|page-number|normal|none|no|lowercase-roman|lowercase-alpha|left|landscape|justified|itemize|italic|hidden|heading(-(all|[1-6]))?|false|end-of-section|end-of-page|end-of-document|decimal|continuous|chicago-style-manual|center|bold|before|auto|after|allowed)\\b[\\],]?"
+        name: "constant.property-value.ulss"
+      }
+      {
+        include: "#numeric-values"
+      }
+      {
+        begin: "rgb\\((?=((?x)\\b(0*((1?[0-9]{1,2})|(2([0-4][0-9]|5[0-5])))\\s*,\\s*){2}(0*((1?[0-9]{1,2})|(2([0-4][0-9]|5[0-5])))\\b)(\\s*,\\s*((0?\\.[0-9]+)|[0-1]))?))"
+        end: "\\)"
+        name: "constant.other.color.rgb-value.css"
+        patterns: [
+          {
+            include: "#numeric-values"
+          }
+        ]
+      }
+      {
+        include: "#variable"
+      }
+    ]
+  variable:
+    begin: "\\$"
+    end: "(?=(\\s|=|\\;|\\}))"
+    name: "variable.other.ulss"
+  "variable-definition":
+    begin: "^\\s*(?=\\$)"
+    end: "$"
+    name: "meta.variable.other.ulss"
+    patterns: [
+      {
+        include: "#comment"
+      }
+      {
+        include: "#variable"
+      }
+      {
+        include: "#numeric-values"
+      }
+    ]
+scopeName: "source.ulss"

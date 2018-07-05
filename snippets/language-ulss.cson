@@ -1,0 +1,449 @@
+".source.ulss":
+  Defaults:
+    prefix: "def"
+    body: '''
+      defaults {
+      	${1}
+      }
+    '''
+  Heading:
+    prefix: "hea"
+    body: '''
+      heading-${1|1,2,3,4,5,6,all|}${2|,:first,:last|} {
+      	${3}
+      }
+    '''
+  List:
+    prefix: "lis"
+    body: '''
+      list-${1|all,ordered,unordered|}${2|,:first,:last,:enumerator|} {
+      	${3}
+      }
+    '''
+  Paragraph:
+    prefix: "par"
+    body: '''
+      paragraph${1|,:first,:last|} {
+      	${2}
+      }
+    '''
+  "Area-…":
+    prefix: "area"
+    body: '''
+      area-${1|footer,footnotes,header|} {
+      	${2}
+      }
+    '''
+  Footer:
+    prefix: "foo"
+    body: '''
+      area-footer${1|,:first-page,:left-page,:right-page|} {
+      	${2}
+      }
+    '''
+  "Footnotes Area":
+    prefix: "foo"
+    body: '''
+      area-footnotes${1|,:anchor|} {
+      	${2}
+      }
+    '''
+  Header:
+    prefix: "hea"
+    body: '''
+      area-header${1|,:first-page,:left-page,:right-page|} {
+      	${2}
+      }
+    '''
+  "Block-…":
+    prefix: "block"
+    body: '''
+      block-${1|code,comment,quote,raw,all|} {
+      	${2}
+      }
+    '''
+  Codeblock:
+    prefix: "cod"
+    body: '''
+      block-code${1|,:first,:last|} {
+      	${2}
+      }
+    '''
+  "Block Comment":
+    prefix: "com"
+    body: '''
+      block-comment${1|,:first,:last|} {
+      	${2}
+      }
+    '''
+  Blockquote:
+    prefix: "quo"
+    body: '''
+      block-quote${1|,:first,:last|} {
+      	${2}
+      }
+    '''
+  "Raw Block":
+    prefix: "raw"
+    body: '''
+      block-raw${1|,:first,:last|} {
+      	${2}
+      }
+    '''
+  "Document Settings":
+    prefix: "doc"
+    body: '''
+      document-settings {
+      	${1}
+      }
+    '''
+  "Inline-…":
+    prefix: "inl"
+    body: '''
+      inline-${1|annotation,citation,code,comment,delete,emphasis,footnote,link,mark,raw,strong|} {
+      	${2}
+      }
+    '''
+  Annotation:
+    prefix: "ann"
+    body: '''
+      inline-annotation${1|,:anchor|} {
+      	${2}
+      }
+    '''
+  Citation:
+    prefix: "cit"
+    body: '''
+      inline-citation {
+      	${1}
+      }
+    '''
+  "Inline Code":
+    prefix: "cod"
+    body: '''
+      inline-code${1|,:first,:last|} {
+      	${2}
+      }
+    '''
+  "Inline Comment":
+    prefix: "com"
+    body: '''
+      inline-comment${1|,:first,:last|} {
+      	${2}
+      }
+    '''
+  Delete:
+    prefix: "del"
+    body: '''
+      inline-delete${1|,:first,:last|} {
+      	${2}
+      }
+    '''
+  Emphasis:
+    prefix: "emp"
+    body: '''
+      inline-emphasis${1|,:first,:last|} {
+      	${2}
+      }
+    '''
+  Footnote:
+    prefix: "foo"
+    body: '''
+      inline-footnote${1|,:anchor|} {
+      	${2}
+      }
+    '''
+  Link:
+    prefix: "lin"
+    body: '''
+      inline-link${1|,:first,:last|} {
+      	${2}
+      }
+    '''
+  Mark:
+    prefix: "mar"
+    body: '''
+      inline-mark${1|,:first,:last|} {
+      	${2}
+      }
+    '''
+  "Inline Raw":
+    prefix: "raw"
+    body: '''
+      inline-raw${1|,:first,:last|} {
+      	${2}
+      }
+    '''
+  Strong:
+    prefix: "str"
+    body: '''
+      inline-strong${1|,:first,:last|} {
+      	${2}
+      }
+    '''
+  "Media-…":
+    prefix: "medi"
+    body: '''
+      media-${1|image|} {
+      	${2}
+      }
+    '''
+  Image:
+    prefix: "img"
+    body: '''
+      media-image {
+      	${1}
+      }
+    '''
+  "Paragraph-…":
+    prefix: "para"
+    body: '''
+      paragraph-${1|divider,figure,filename|} {
+      	${2}
+      }
+    '''
+  "Paragraph Divider":
+    prefix: "div"
+    body: '''
+      paragraph-divider${1|,:first,:last|} {
+      	${2}
+      }
+    '''
+  "Paragraph Figure":
+    prefix: "fig"
+    body: '''
+      paragraph-figure {
+      	${1}
+      }
+    '''
+  Filename:
+    prefix: "fil"
+    body: '''
+      paragraph-filename {
+      	${1}
+      }
+    '''
+  "style-title: \"Inline Code\"":
+    prefix: "styl"
+    body: "style-title:\t\t\t\"${1}\""
+  "Escape Character":
+    prefix: "esc"
+    body: '''
+      ulysses-escape-character {
+      	${1}
+      }
+    '''
+  Escape:
+    prefix: "esc"
+    body: '''
+      ulysses-escape {
+      	${1}
+      }
+    '''
+  Tag:
+    prefix: "tag"
+    body: '''
+      ulysses-tag {
+      	${1}
+      }
+    '''
+  Whitespace:
+    prefix: "whi"
+    body: '''
+      ulysses-whitespace {
+      	${1}
+      }
+    '''
+".meta.property-group.ulss":
+  "anchor-alignment":
+    prefix: "anch"
+    body: "anchor-alignment:\t\t${1|left,right|}"
+  "anchor-inset":
+    prefix: "anch"
+    body: "anchor-inset:\t\t\t${1}${2|pt,mm,cm,in,em,en,ex,%|}"
+  "background-color: hex":
+    prefix: "back"
+    body: "background-color:\t\t#${1}"
+  "background-color: none":
+    prefix: "back"
+    body: "background-color:\t\tnone"
+  "background-color: rgb":
+    prefix: "back"
+    body: "background-color:\t\trgb(${1}, ${2}, ${3})"
+  "baseline-shift":
+    prefix: "base"
+    body: "baseline-shift:\t\t\t${1|normal,superscript,subscript|}"
+  "bottom-spacing":
+    prefix: "bott"
+    body: "bottom-spacing:\t\t\t${1}${2|pt,mm,cm,in,em,en,ex,%|}"
+  "character-spacing":
+    prefix: "char"
+    body: "character-spacing:\t\t${1}${2|pt,mm,cm,in,em,en,ex,%|}"
+  "column-count":
+    prefix: "colu"
+    body: "column-count:\t\t\t${1|1,2,3,|}"
+  "column-spacing-width":
+    prefix: "colu"
+    body: "column-spacing-width:\t${1}${2|pt,mm,cm,in,em,en,ex,%|}"
+  "content (paragraph-divider)":
+    prefix: "cont"
+    body: "content:\t\t\t\t\"${1|❧|}\""
+  "content (header/footer)":
+    prefix: "cont"
+    body: "content:\t\t\t\t${1|none,heading,page-number|}"
+  "default-tab-interval":
+    prefix: "defa"
+    body: "default-tab-interval:\t${1}${2|pt,mm,cm,in,em,en,ex,%|}"
+  "divider-length":
+    prefix: "divi"
+    body: "divider-length:\t\t\t${1}${2|pt,mm,cm,in,em,en,ex,%|}"
+  "divider-position":
+    prefix: "divi"
+    body: "divider-position:\t\t${1|left,right|}"
+  "divider-spacing":
+    prefix: "divi"
+    body: "divider-spacing:\t\t${1}${2|pt,mm,cm,in,em,en,ex,%|}"
+  "divider-width":
+    prefix: "divi"
+    body: "divider-width:\t\t\t${1}${2|pt,mm,cm,in,em,en,ex,%|}"
+  "enumeration-format":
+    prefix: "enum"
+    body: "enumeration-format:\t\t\"${1|%p),%*.%p|}\""
+  "enumeration-style":
+    prefix: "enum"
+    body: "enumeration-style:\t\t${1|decimal,lowercase-alpha,uppercase-alpha,lowercase-roman,uppercase-roman|}"
+  "first-line-indent":
+    prefix: "firs"
+    body: "first-line-indent:\t\t${1}${2|pt,mm,cm,in,em,en,ex,%|}"
+  "font-color: hex":
+    prefix: "font"
+    body: "font-color:\t\t\t\t#${1}"
+  "font-color: rgb":
+    prefix: "font"
+    body: "font-color:\t\t\t\trgb(${1}, ${2}, ${3})"
+  "font-family: \"Arial\"":
+    prefix: "font"
+    body: "font-family:\t\t\t\"${1}\""
+  "font-size":
+    prefix: "font"
+    body: "font-size:\t\t\t\t${1}${2|pt,mm,cm,in,em,en,ex,%|}"
+  "font-slant":
+    prefix: "font"
+    body: "font-slant:\t\t\t\t${1|italic,normal|}"
+  "font-style: \"Condensed\"":
+    prefix: "font"
+    body: "font-style:\t\t\t\t\"${1}\""
+  "font-weight":
+    prefix: "font"
+    body: "font-weight:\t\t\t${1|bold,normal|}"
+  "footnote-enumeration":
+    prefix: "foot"
+    body: "footnote-enumeration:\t${1|per-page,per-section,continuous|}"
+  "footnote-placement":
+    prefix: "foot"
+    body: "footnote-placement:\t\t${1|end-of-page,end-of-section,end-of-document|}"
+  "footnote-style":
+    prefix: "foot"
+    body: "footnote-style:\t\t\t${1|decimal,lowercase-alpha,uppercase-alpha,lowercase-roman,uppercase-roman,chicago-style-manual|}"
+  "footnote-visibility":
+    prefix: "foot"
+    body: "footnote-visibility:\t${1|visible,hidden|}"
+  hyphenation:
+    prefix: "hyph"
+    body: "hyphenation:\t\t\t${1|yes,no|}"
+  "item-spacing":
+    prefix: "item"
+    body: "item-spacing:\t\t\t${1}${2|pt,mm,cm,in,em,en,ex,%|}"
+  itemization:
+    prefix: "item"
+    body: "itemization:\t\t\t${1|itemize,none|}"
+  "keep-with-following":
+    prefix: "keep"
+    body: "keep-with-following:\t${1|yes,no|}"
+  "line-height":
+    prefix: "line"
+    body: "line-height:\t\t\t${1}${2|auto,pt,mm,cm,in,em,en,ex,%|}"
+  "locale: \"de\", \"en\", \"es\", …":
+    prefix: "loca"
+    body: "locale:\t\t\t\t\t\"${1|en,es,de,fr|}\""
+  "margin-left":
+    prefix: "left"
+    body: "margin-left:\t\t\t${1}${2|pt,mm,cm,in,em,en,ex,%|}"
+  "margin-right":
+    prefix: "right"
+    body: "margin-right:\t\t\t${1}${2|pt,mm,cm,in,em,en,ex,%|}"
+  "margin-…":
+    prefix: "marg"
+    body: "margin-${1|top:\\t,bottom:,left:,right:|}\t\t\t${2}${3|pt,mm,cm,in,em,en,ex,%|}"
+  "orphans-and-widows":
+    prefix: "orph"
+    body: "orphans-and-widows:\t\t${1|allowed,prevented|}"
+  "page-binding":
+    prefix: "page"
+    body: "page-binding:\t\t\t${1|left,right|}"
+  "page-break":
+    prefix: "page"
+    body: "page-break:\t\t\t\t${1|none,after,before|}"
+  "page-height":
+    prefix: "page"
+    body: "page-height:\t\t\t${1}${2|pt,mm,cm,in|}"
+  "page-inset-…:":
+    prefix: "page"
+    body: "page-inset-${1|top:\\t,bottom:,inner:,outer:|}\t\t${2}${3|pt,mm,cm,in,em,en,ex,%|}"
+  "page-number-format: \"- %p -\"":
+    prefix: "page"
+    body: "page-number-format:\t\t\"${1}%p${2}\""
+  "page-number-reset":
+    prefix: "page"
+    body: "page-number-reset:\t\t${1|none,per-section|}"
+  "page-number-style":
+    prefix: "page"
+    body: "page-number-style:\t\t${1|decimal,lowercase-alpha,uppercase-alpha,lowercase-roman,uppercase-roman|}"
+  "page-orientation":
+    prefix: "page"
+    body: "page-orientation:\t\t${1|portrait,landscape|}"
+  "page-width":
+    prefix: "page"
+    body: "page-width:\t\t\t\t${1}${2|pt,mm,cm,in|}"
+  "section-break":
+    prefix: "sect"
+    body: "section-break:\t\t\t${1|none,heading-1,heading-2,heading-3,heading-4,heading-5,heading-6,paragraph-divider|}"
+  "strikethrough-color: hex":
+    prefix: "stri"
+    body: "strikethrough-color:\t#${1}"
+  "strikethrough-color: rgb":
+    prefix: "stri"
+    body: "strikethrough-color:\trgb(${1}, ${2}, ${3})"
+  strikethrough:
+    prefix: "stri"
+    body: "strikethrough:\t\t\t${1|none,single|}"
+  "tab-alignments: [a, b, c, d]":
+    prefix: "tab"
+    body: "tab-alignments:\t\t\t[${1|left,right,center|}, ${2|left,right,center|}, ${3|left,right,center|}, ${4|left,right,center|}]"
+  "tab-positions: [a, b, c, d]":
+    prefix: "tab"
+    body: "tab-positions:\t\t\t[${1|4|}${2|pt,mm,cm,in,em,en,ex,%|}, ${3|8|}${2}, ${4|12|}${2}, ${5|16|}${2}]"
+  "text-alignment":
+    prefix: "text"
+    body: "text-alignment:\t\t\t${1|left,center,right,justified|}"
+  "text-inset":
+    prefix: "text"
+    body: "text-inset:\t\t\t\t${1}${2|pt,mm,cm,in,em,en,ex,%|}"
+  "top-spacing":
+    prefix: "top"
+    body: "top-spacing:\t\t\t${1}${2|pt,mm,cm,in,em,en,ex,%|}"
+  "two-sided":
+    prefix: "two"
+    body: "two-sided:\t\t\t\t${1|no,yes|}"
+  "underline-color: hex":
+    prefix: "unde"
+    body: "underline-color:\t\t#${1}"
+  "underline-color: rgb":
+    prefix: "unde"
+    body: "underline-color:\t\trgb(${1}, ${2}, ${3})"
+  underline:
+    prefix: "unde"
+    body: "underline:\t\t\t\t${1|none,single|}"
+  visibility:
+    prefix: "visi"
+    body: "visibility:\t\t\t\t${1|hidden,visible|}"

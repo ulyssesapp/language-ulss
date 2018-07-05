@@ -1,0 +1,14 @@
+{
+  "name": "language-ulss",
+  "version": "1.0.0",
+  "description": "This bundle brings support for Ulysses Style Sheets. It contains syntax highlighting and snippets.",
+  "keywords": [
+  ],
+  "repository": "https://github.com/atom/language-ulss",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "dependencies": {
+  }
+}
