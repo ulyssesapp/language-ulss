@@ -1,8 +1,12 @@
 {
   "name": "language-ulss",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "This bundle brings support for Ulysses Style Sheets. It contains syntax highlighting and snippets.",
-  "keywords": ["Ulsses", "Style Sheets", "ULSS"],
+  "keywords": [
+    "Ulsses",
+    "Style Sheets",
+    "ULSS"
+  ],
   "repository": "https://github.com/soulmen/language-ulss",
   "license": "MIT",
   "engines": {
